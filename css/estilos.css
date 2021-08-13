@@ -1,7 +1,7 @@
 :root {
-    --fuenteHeading: 'PT Sans', sans-serif;
-    --fuenteParrafos: 'Open Sans', sans-serif;
-    --primario: #784D3c;
+    --fuenteHeading: "PT Sans", sans-serif;
+    --fuenteParrafos: "Open Sans", sans-serif;
+    --primario: #784d3c;
     --gris: #e1e1e1;
     --blanco: #ffffff;
     --negro: #000000;
@@ -42,6 +42,7 @@ h2,
 h3,
 h4 {
     font-family: var(--fuenteHeading);
+    line-height: 1.2;
 }
 
 h1 {
@@ -82,8 +83,15 @@ img {
 
 /* Header */
 
-.header {
+.webp .header {
+    background-image: url(../img/banner.webp);
+}
+
+.nowebp .header {
     background-image: url(../img/banner.jpg);
+}
+
+.header {
     height: 600px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -100,6 +108,10 @@ img {
     .header__texto {
         margin-top: 150px;
     }
+}
+
+.barra {
+    padding-top: 40px;
 }
 
 @media (min-width: 768px) {
@@ -169,6 +181,7 @@ img {
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 20px;
+    border: none;
 }
 
 @media (min-width: 768px) {
@@ -177,6 +190,143 @@ img {
     }
 }
 
+.boton:hover {
+    cursor: pointer;
+}
+
 .boton--primario {
     background-color: var(--negro);
+}
+
+.boton--secundario {
+    background-color: var(--primario);
+}
+
+.cursos {
+    list-style: none;
+}
+
+.widget-curso {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.widget-curso:last-of-type {
+    border: none;
+    margin-bottom: 0px;
+}
+
+.widget-curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: 700;
+}
+
+.widget-curso__info {
+    font-weight: 400;
+}
+
+.widget-curso__label,
+.widget-curso__info {
+    font-size: 2rem;
+}
+
+.footer {
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 40px;
+}
+
+
+/* sobre nosotros */
+
+@media (min-width: 768px) {
+    .sobre-nosotros {
+        display: flex;
+        justify-content: space-between;
+        /*gap: 20px;*/
+    }
+    .sobre-nosotros__imagen,
+    .sobre-nosotros__texto {
+        /*el flex-basis es como el width, pero el flex-basis solo funciona con display:flex*/
+        /*Una forma
+      flex-basis: 50%;*/
+        /*Si es que no soporta el gap:20px*/
+        flex-basis: calc(50% - 1rem);
+    }
+    /* Puede usarse de esta manera
+
+  .sobre-nosotros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+}*/
+}
+
+.curso {
+    padding: 30px 0px;
+    border-bottom: 1px solid var(--gris);
+}
+
+@media (min-width: 768px) {
+    .curso {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 20px;
+    }
+}
+
+.curso:last-of-type {
+    border: none;
+}
+
+.curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: 700;
+}
+
+.curso__info {
+    font-weight: 400;
+}
+
+.curso__label,
+.curso__info {
+    font-size: 2rem;
+}
+
+
+/* Contacto */
+
+.contacto-bg {
+    background-image: url(../img/contacto.jpg);
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -50px auto 0 auto;
+    width: 95%;
+    padding: 50px;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.campo__label {
+    flex: 0 0 90px;
+    padding-right: 20px;
+}
+
+.campo__field {
+    flex: 1;
+    border: 1px solid var(--gris);
+    overflow: auto;
+}
+
+.campo__field--textarea {
+    height: 200px;
 }
